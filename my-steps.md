@@ -15,3 +15,9 @@ npm install bootstrap@5
 
 dotnet dev-certs https --trust
 dotnet tool install --global dotnet-ef
+
+# setup API
+
+under root dir 'globo', mkdir Api
+cd Api
+dotnet new webapi -minimal

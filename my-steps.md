@@ -21,3 +21,26 @@ dotnet tool install --global dotnet-ef
 under root dir 'globo', mkdir Api
 cd Api
 dotnet new webapi -minimal
+
+# debug
+
+in vs code, debug -> Run and Debug to create a launch file
+pick Chrome to attach to
+before debugging, npm start
+hit the debug button
+
+## we can also do this to the api project
+
+we get two launch configurations: ".NET Core Launch (web)", ".NET Core Attach"
+
+# add sqllite to api
+
+under api project
+dotnet add package Microsoft.EntityFrameworkCore.Sqllit --version 6.\*
+create a folder 'Data' and add HouseEntity.cs
+
+# add external folder to repo
+
+git --work-tree=/ add ../Api/Data
+
+-   if I do this: git --work-tree=/ add ../Api, then /bin, /object, etc all get added, and I don't know how to ignore them

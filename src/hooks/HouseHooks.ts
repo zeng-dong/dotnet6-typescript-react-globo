@@ -1,4 +1,6 @@
+import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import config from "../config";
 import { House } from "../types/house";
 
@@ -18,4 +20,10 @@ const useFetchHouses = (): House[] => {
 	return houses;
 };
 
-export default useFetchHouses;
+const useFetchHousesByUseQuery = () => {
+	return useQuery<House[], AxiosError>("houses", () =>
+		axios.get(`${config.baseApiUrl}/houses`).then((resp) => resp.data)
+	);
+};
+
+export { useFetchHouses, useFetchHousesByUseQuery };

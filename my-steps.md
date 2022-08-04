@@ -33,7 +33,9 @@ hit the debug button
 
 we get two launch configurations: ".NET Core Launch (web)", ".NET Core Attach"
 
-dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.\*
+- dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.\*
+- dotnet ef migrations add initial
+- dotnet ef database update
 
 # add sqllite to api
 
